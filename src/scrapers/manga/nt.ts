@@ -6,7 +6,7 @@ import { fulfilledPromises } from '../../utils';
 
 export default class NettruyenScraper extends MangaScraper {
   constructor() {
-    super('nt', 'NT', { baseURL: 'http://nhattruyenone.com' });
+    super('nt', 'NT', { baseURL: 'https://nhattruyenin.com' });
 
     this.locales = ['vi'];
     this.monitor.interval = 20 * 60 * 1000; // 20 minutes

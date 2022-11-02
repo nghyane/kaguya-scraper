@@ -1,8 +1,8 @@
-import { Client as DiscordClient, Intents } from 'discord.js';
+import { Client as DiscordClient, GatewayIntentBits } from 'discord.js';
 import 'dotenv/config';
 
 export const Client = new DiscordClient({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
 Client.login(process.env.DISCORD_TOKEN);
