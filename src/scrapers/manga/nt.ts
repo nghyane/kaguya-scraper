@@ -119,6 +119,9 @@ export default class NettruyenScraper extends MangaScraper {
       return {
         image,
         useProxy: true,
+        proxy: {
+          refererUrl: this.baseURL,
+        },
       };
     });
   }

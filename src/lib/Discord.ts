@@ -5,6 +5,7 @@ export const Client = new DiscordClient({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
+
 Client.login(process.env.DISCORD_TOKEN);
 
 export const getChannel = (id: string) => {

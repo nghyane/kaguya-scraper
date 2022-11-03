@@ -15,6 +15,7 @@ export interface Proxy {
   ignoreReqHeaders?: boolean;
   followRedirect?: boolean;
   redirectWithProxy?: boolean;
+  refererUrl?: string;
   decompress?: boolean;
   appendReqHeaders?: Record<string, string>;
   appendResHeaders?: Record<string, string>;
