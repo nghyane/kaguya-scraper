@@ -10,6 +10,8 @@ To clone the repository, use the following commands:
 git clone https://github.com/hoangvu12/kaguya-scraper
 cd kaguya-scraper
 npm install
+
+npm install -S forever
 ```
 
 ## Enviroment Variables
@@ -53,7 +55,8 @@ STREAMTAPE_API_KEY=
 
 _kaguya-scraper_ is built to handle multiple anime/manga `scrapers` (Or we can call it `sources`).
 
-It will look into each source per an amount of time (you can define it in the source), scrape new data, also notify to subscribed users, send new data message to discord and push to the database.
+It will look into each source per an amount of time (you can define it in the source), scrape new data, also notify to
+subscribed users, send new data message to discord and push to the database.
 
 (Learn how to setup database here: [kaguya-database](https://github.com/hoangvu12/kaguya-database))
 
@@ -63,7 +66,8 @@ You can create a source in `src/scrapers/(anime|manga)`.
 
 Or you can just run `npm run cli generate`. It will generate a source for you based on the answer you give it
 
-Or you can look at examples at `src/scrapers/anime/gogo.ts` and `src/scrapers/manga/nt.ts`. These are two sources that I personally made for currently running [Kaguya](https://github.com/hoangvu12/Kaguya)
+Or you can look at examples at `src/scrapers/anime/gogo.ts` and `src/scrapers/manga/nt.ts`. These are two sources that I
+personally made for currently running [Kaguya](https://github.com/hoangvu12/Kaguya)
 
 ### Initialize source.
 
@@ -75,4 +79,5 @@ Run `npm run cli scraper:init` to initialize source.
 
 ## License
 
-Licensed under the MIT. See the [LICENSE](https://github.com/hoangvu12/kaguya-scraper/blob/main/LICENSE) file for details.
+Licensed under the MIT. See the [LICENSE](https://github.com/hoangvu12/kaguya-scraper/blob/main/LICENSE) file for
+details.

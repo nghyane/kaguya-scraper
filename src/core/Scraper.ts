@@ -104,8 +104,8 @@ export default class Scraper {
   /**
    * The monitor will run this method to check if the monitor should run onChange
    * (defined in cron/fetch)
-   * @param oldPage old page that the monitor requested before
-   * @param newPage new page that the monitor just requested
+   * @param _oldPage old page that the monitor requested before
+   * @param _newPage new page that the monitor just requested
    * @returns boolean to let the monitor decided if the onChange function should run.
    */
   shouldMonitorChange(_oldPage: any, _newPage: any): boolean {
