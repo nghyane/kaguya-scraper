@@ -11,8 +11,9 @@
       "status": 204
     },
     {
-      "src": "/(.*)",
-      "dest": "/src/main.ts"
-    }
+         "src": "/(.*)",
+         "dest": "/src/main.ts"
+       }
+     ]
   ]
 }
