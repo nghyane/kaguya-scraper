@@ -37,8 +37,7 @@
     "typescript": "~4.5.3"
   },
   "scripts": {
-    "start": "forever start build/src/main.js --minUptime 1000ms",
-    "stop": "forever stop build/src/main.js",
+    "start": "node build/src/main.js",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.release.json",
