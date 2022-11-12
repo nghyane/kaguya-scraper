@@ -108,7 +108,7 @@ export const getTodayAiringSchedules = async (): Promise<AiringSchedule[]> => {
     };
 
     const { data } = await axios.post<{ data: { Page: Page } }>(
-      'https://graphql.anilist.co/',
+      'https://graphql.wibulord.com/',
       body,
     );
 

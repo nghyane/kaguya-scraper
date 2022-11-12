@@ -480,7 +480,7 @@ interface AnilistResponse<T> {
 
 export const fetch = async <T>(body: Body) => {
   const { data } = await client.post<AnilistResponse<T>>(
-    'https://graphql.anilist.co/',
+    'https://graphql.wibulord.com/',
     body,
     {
       timeout: 20000,
