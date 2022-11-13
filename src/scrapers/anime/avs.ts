@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import AnimeScraper, { GetSourcesQuery } from '../../core/AnimeScraper';
 import { SourceAnime } from '../../types/data';
 import { fulfilledPromises } from '../../utils';
@@ -15,6 +15,8 @@ export default class AnimeVietsubScraper extends AnimeScraper {
 
     constructor() {
         super('avs', 'AVS', { baseURL: 'https://animevietsub.cc' });
+
+        this.monitor.isDisabled = true;
 
         this.locales = ['vi'];
     }

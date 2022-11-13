@@ -8,7 +8,7 @@ import gogoExtractor from '../../extractors/gogoplay';
 import { SourceAnime, SourceEpisode } from '../../types/data';
 import { fulfilledPromises } from '../../utils';
 
-const BASE_URL = 'https://gogoanime.dk';
+const BASE_URL = 'https://gogoanime.ar';
 const BASE_AJAX_URL = 'https://ajax.gogo-load.com/ajax';
 
 export default class AnimeGOGOScraper extends AnimeScraper {
@@ -18,6 +18,8 @@ export default class AnimeGOGOScraper extends AnimeScraper {
     // Languages that the source supports (Two letter code)
     // See more: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
     this.locales = ['en'];
+
+    this.monitor.isDisabled = true;
 
     this.monitor.onRequest = async () => {
       const { data } = await axios.get(
@@ -75,13 +77,17 @@ export default class AnimeGOGOScraper extends AnimeScraper {
         // /honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-3rd-season-episode-4
         const [sourceMediaId] = href.replace('/', '').split('-episode');
         const episodes = await this.getEpisodes(sourceMediaId);
-        const name = $sub(el).find('.name').text().replace('(Dub)', '').trim();
+        let name = $sub(el).find('.name').text().trim();
+
+        const isDub = name.includes('dub');
+        name = name.replace('(Dub)', '')
 
         return {
           titles: [name],
           episodes,
           sourceId: this.id,
           sourceMediaId: sourceMediaId,
+          section: isDub ? 'Dub' : 'Sub',
         };
       });
 
@@ -93,13 +99,17 @@ export default class AnimeGOGOScraper extends AnimeScraper {
         // /honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-3rd-season-episode-4
         const [sourceMediaId] = href.replace('/', '').split('-episode');
         const episodes = await this.getEpisodes(sourceMediaId);
-        const name = $dub(el).find('.name').text().replace('(Dub)', '').trim();
+        let name = $sub(el).find('.name').text().trim();
+
+        const isDub = name.includes('dub');
+        name = name.replace('(Dub)', '')
 
         return {
           titles: [name],
           episodes,
           sourceId: this.id,
           sourceMediaId: sourceMediaId,
+          section: isDub ? 'Dub' : 'Sub',
         };
       });
 
